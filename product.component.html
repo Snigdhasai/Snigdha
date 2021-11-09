@@ -1,0 +1,40 @@
+<!-- <p>product works!</p> -->
+
+<table>
+    <tr *ngFor="let item of nos">
+        <td>{{item}}</td>
+    </tr>
+</table>
+<hr/>
+<table>
+    <tr>
+        <td>Product ID</td>&nbsp;&nbsp;
+        <td>Product Name</td>&nbsp;&nbsp;
+        <td>Price</td>
+    </tr>
+    <tr *ngFor="let pdata of products">
+        <td>{{pdata.id}}</td>&nbsp;&nbsp;
+        <td>{{pdata.name}}</td>&nbsp;&nbsp;
+        <td>{{pdata.price}}</td>
+    </tr>
+</table>
+
+
+<hr/>
+<form>
+    <fieldset>
+        <label>Product Id</label>&nbsp;
+        <input type="number" [(ngModel)]="productID" id="prodid" name="prodid"> 
+        <br/>
+        <br/>
+        <label>Product Name</label>&nbsp;
+        <input type="text" [(ngModel)]="productName" id="prodname" name="prodname"> 
+        <br/>
+        <br/>
+        <label>Product Price</label>&nbsp;
+        <input type="number" [(ngModel)]="productPrice" id="price" name="price"> 
+        <br/>
+        <br/>
+        <input type="submit" value="save" (click)="Save($event)"/>
+    </fieldset>
+</form>
