@@ -1,0 +1,30 @@
+<!-- <p>interest-calculation works!</p> -->
+
+<h1>Interest Calculation Details</h1>
+
+<form>
+    <label>Principle</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="number" [(ngModel)]="interestCal.Principle" id="Principle" name="Principle"/>&nbsp;&nbsp;&nbsp;
+    <br/>
+    <br/>
+    <label>No Of Years</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="number" [(ngModel)]="interestCal.NoOfYears" id="No Of Years" name="No Of Years"/>&nbsp;
+    <br/>
+    <br/>
+    <label>Rate of Interest</label>&nbsp;&nbsp;&nbsp;
+    <input type="number" [(ngModel)]="interestCal.RateOfInterest" id="Rate of Interest" name="Rate of Interest"/>&nbsp;  
+    <br/>
+    <br/>
+    <input type="submit" value="Save" (click)="SaveClick($event)" />
+    <br/>
+    <br/>
+</form>
+
+<div>
+    <div> Principle: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          {{interestCal.Principle}}</div>
+    <div> NoOfYears: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{interestCal.NoOfYears}}</div>
+    <div> RateOfInterest: &nbsp; {{interestCal.RateOfInterest}}</div>  
+    <div> Amount: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          {{(interestCal.Principle*interestCal.NoOfYears*interestCal.RateOfInterest)/100}}</div>
+</div>

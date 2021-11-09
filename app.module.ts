@@ -7,10 +7,11 @@ import { EmpComponent } from './emp/emp.component';
 import { ProductComponent } from './product/product.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerOrderComponent } from './customer-order/customer-order.component';
+import { InterestCalculationComponent } from './interest-calculation/interest-calculation.component';
 
 @NgModule({
   declarations: [
-    AppComponent,EmpComponent, ProductComponent, CustomerComponent, CustomerOrderComponent
+    AppComponent,EmpComponent, ProductComponent, CustomerComponent, CustomerOrderComponent, InterestCalculationComponent
 
   ],
   imports: [
@@ -19,6 +20,6 @@ import { CustomerOrderComponent } from './customer-order/customer-order.componen
     
   ],
   providers: [],
-  bootstrap: [CustomerOrderComponent] //bootstrap-->startup object
+  bootstrap: [InterestCalculationComponent] //bootstrap-->startup object
 })
 export class AppModule { }
