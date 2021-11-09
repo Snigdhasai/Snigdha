@@ -1,0 +1,23 @@
+<!-- <p>customer works!</p> -->
+
+<h1>{{pageName}}</h1>
+<p [style.color]="myparacolor">
+    This is the info to fill customer details.
+</p>
+<form>
+    <fieldset>
+        <label>Customer ID</label>&nbsp;
+        <input type="number" [class]="myaquaborder" [(ngModel)]="customerID" id="customerid" name="customerid"/>&nbsp; 
+        <br/>
+        <br/>
+        <label>Customer Name</label>&nbsp;
+        <input type="text"  [class]="mygreyborder" [(ngModel)]="customerName" id="customername" name="customername"/>&nbsp;  
+        <br/>
+        <br/>
+        <label>Customer City</label>&nbsp;
+        <input type="number" [class]="myaquamarineborder" [(ngModel)]="customerCity" id="customercity" name="customercity"/>&nbsp;  
+        <br/>
+        <br/>
+        <input type="submit" value="Save Customer" (click)="SaveClick($event)"/>
+    </fieldset>
+</form>
