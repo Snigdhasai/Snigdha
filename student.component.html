@@ -1,0 +1,37 @@
+<!-- <p>student works!</p> -->
+
+<table>
+    <tr *ngFor="let abc of nos">
+        <td>{{abc}}</td>
+    </tr>
+</table>
+
+<hr/>
+<table>
+    <tr>
+        <td>Student ID</td>&nbsp;&nbsp;
+        <td>Student Name</td>&nbsp;&nbsp;
+        <td>Student City</td>
+    </tr>
+    <tr *ngFor="let pdata of students">
+        <td>{{pdata.id}}</td>&nbsp;&nbsp;
+        <td>{{pdata.name}}</td>&nbsp;
+        <td>{{pdata.city}}</td>
+    </tr>
+</table>
+
+<hr/>
+<table>
+    <tr>
+    <td>Student ID</td>&nbsp;&nbsp;
+    <td>Student Name</td>&nbsp;&nbsp;
+    <td>Student City</td>
+</tr>
+<tr *ngFor="let pdata of plist1">
+<td>{{pdata.stuid}}</td>&nbsp;
+<td>{{pdata.stuname}}</td>&nbsp;
+<td>{{pdata.stucity}}</td>
+
+</tr>
+</table>
+
