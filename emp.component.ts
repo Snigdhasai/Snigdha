@@ -8,6 +8,9 @@ import { Employee } from 'src/Models/EmployeeModel';
 export class EmpComponent implements OnInit 
 {
    i:number=0;
+   num:number=0;
+   colorname:string="";
+
   IsLoggedIn:boolean=false;
   IsNewUser:boolean=true;
   IsCashPayment:boolean=true;
