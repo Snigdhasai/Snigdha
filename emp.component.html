@@ -1,80 +1,49 @@
-<!-- <p>emp works!</p> -->
 
-<div *ngIf="IsLoggedIn; else LoggedOut">
-    <h1>Welcome Back</h1>
-</div>
 
-<ng-template #LoggedOut>
-   <h2>You have LoggedOut</h2> 
-</ng-template>   
 
-<div *ngIf="IsCashPayment; else PaymentMode">
-    <h2>You have payed in cash</h2>
-</div>
-
-<ng-template #PaymentMode>
-    <h3>You have paid by some other mode</h3>
-</ng-template>
-
-<div>
-<form>
-    <input type="text" [(ngModel)]="emp1.empid" id="empid" name="empid"/>
-    <input type="text" [(ngModel)]="emp1.empname" id="empname" name="empname" />
-    <input type="number" [(ngModel)]="emp1.deptno" id="deptno" name="deptno"/>
-</form>
-
-<label>
-    Gender:
-    <div *ngIf="Gender=='Female'; else Male">
-        <input type="radio" value="Female" checked>
-        <label for="Female">Female</label>   
-
-        <!-- <input type="radio" value="Male" checked>
-        <label for="Male">Male</label>  -->
-    </div> 
+<!-- <div  *ngIf=" IsLoggedIn; then loggedIn; else loggedOut">
     
-    <ng-template #Male>
-        <input type="radio" value="Male" checked>
-    <label for="Male">Male</label>
+</div>
+
+    <ng-template #loggedIn>
+        <div>
+          Welcome back, friend.
+        </div>
     </ng-template>
-</label>
 
-<div>
-    Mode Of Payment:
-    <input type="checkbox" [(ngModel)]="IsCashPayment" name="IsCashPayment" id="IsCashPayment" />
-    <label for="IsCashPayment">
-         By Cash
-    </label>
-    <input type="checkbox" [(ngModel)]="IsChequePayment" name="IsChequePayment" id="IsChequePayment" />
-    <label for="IsChequePayment">
-         By Cheque
-    </label>
+    <ng-template #loggedOut>
+        <div>
+          Please friend, login.
+        </div>
+    </ng-template> -->
+
+<hr/>
+<form>
+    <input type="number" [(ngModel)]="i" id="no1" name="no1"/>
+</form>
+<div  *ngIf="i>=10 ; then loggedIn; else loggedOut">
+    
 </div>
+    
+    <ng-template #loggedIn>
+        <div *ngIf="i>10; then greaterthan; else equalto">    
+        </div>
+        <ng-template #greaterthan>
+            <div>
+                  greaterthan 10
+            </div>
+        </ng-template>
+    </ng-template>
 
-<!-- <div *ngIf="Gender=='Female'; else Male">
-    <input type="radio" value="Female" checked>
-    <label for="Female">Female</label>
-</div> -->
-
-<!-- <ng-template #Male>
-    <input type="radio" value="Male" checked>
-<label for="Male">Male</label>
-</ng-template> -->
-
-</div>
-
-<!-- <div *ngIf="IsLoggedIn || !IsNewUser">
-    <h1>Welcome</h1>
-</div>
-
-<div *ngIf="!IsLoggedIn">
-   <a href="">Please login your ID </a>
-</div>
-
-
-<div *ngIf="IsNewUser">
-    <a href="">Create/Sign In your acoount here</a> 
-</div> -->
-
-
+    <ng-template #equalto>
+        <div>
+              equal to 10
+        </div>
+    </ng-template>
+    
+    <ng-template #loggedOut>
+        <div>
+              less Than 10
+        </div>
+    </ng-template>
 
