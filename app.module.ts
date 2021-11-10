@@ -4,22 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { EmpComponent } from './emp/emp.component';
-import { ProductComponent } from './product/product.component';
-import { CustomerComponent } from './customer/customer.component';
-import { CustomerOrderComponent } from './customer-order/customer-order.component';
-import { InterestCalculationComponent } from './interest-calculation/interest-calculation.component';
 
 @NgModule({
   declarations: [
-    AppComponent,EmpComponent, ProductComponent, CustomerComponent, CustomerOrderComponent, InterestCalculationComponent
-
+    AppComponent,
+    EmpComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
-    
+
   ],
   providers: [],
-  bootstrap: [InterestCalculationComponent] //bootstrap-->startup object
+  bootstrap: [EmpComponent]
 })
 export class AppModule { }

@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule,FormControl } from '@angular/forms';
+import { Employee } from 'src/Models/EmployeeModel';
 @Component({
   selector: 'app-emp',
   templateUrl: './emp.component.html',
   styleUrls: ['./emp.component.css']
 })
-export class EmpComponent implements OnInit {
-empid:number=100;
-ename:string="Siri";
-deptno:number=10;
-imgurl="../../assets/kitty.jpeg"
-personurl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkcUGV-7PmJUDUHMHY7-A9cAz6NIHeNhHP6Q&usqp=CAU"
+export class EmpComponent implements OnInit 
+{
+  IsLoggedIn:boolean=true;
+  IsNewUser:boolean=true;
+  IsCashPayment:boolean=true;
+  IsChequePayment:boolean=false;
+  Gender:string="";
+  emp1:Employee=new Employee(3,"Ayushi",103,"Female");
+
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void  
+  {
+    //let emp1:Employee=new Employee(1,"Siri",100,"Female");
+    this.Gender=this.emp1.gender;
   }
 
-  saveClick($event:any)
-  {
-     //alert("button clicked");
-     console.log("Hello, button clicked");
-  }
 }

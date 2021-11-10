@@ -1,18 +1,80 @@
-<p>emp works!</p>
+<!-- <p>emp works!</p> -->
 
+<div *ngIf="IsLoggedIn; else LoggedOut">
+    <h1>Welcome Back</h1>
+</div>
+
+<ng-template #LoggedOut>
+   <h2>You have LoggedOut</h2> 
+</ng-template>   
+
+<div *ngIf="IsCashPayment; else PaymentMode">
+    <h2>You have payed in cash</h2>
+</div>
+
+<ng-template #PaymentMode>
+    <h3>You have paid by some other mode</h3>
+</ng-template>
+
+<div>
 <form>
-    <label>Enter Empid &nbsp;</label>
-    <input type="number" id="empid" [value]="empid" name="empid"/>
-    <br/>
-    <br/>
-    <label>Enter Empname &nbsp;</label>
-    <input type="string" id="ename" [value]="ename" name="ename"/>
-    <br/>
-    <br/>
-    <label>Enter Deptno &nbsp;</label>
-    <input type="number" id="deptno" [value]="deptno" name="deptno"/>
-    <br/>
-    <br/>
-   <img [src]="imgurl" height="150px" width="200px"/>&nbsp;
-   <img [src]="personurl" height="150px" width="200"/>&nbsp;
-   <button (click)="saveClick($event)">save</button>
+    <input type="text" [(ngModel)]="emp1.empid" id="empid" name="empid"/>
+    <input type="text" [(ngModel)]="emp1.empname" id="empname" name="empname" />
+    <input type="number" [(ngModel)]="emp1.deptno" id="deptno" name="deptno"/>
+</form>
+
+<label>
+    Gender:
+    <div *ngIf="Gender=='Female'; else Male">
+        <input type="radio" value="Female" checked>
+        <label for="Female">Female</label>   
+
+        <!-- <input type="radio" value="Male" checked>
+        <label for="Male">Male</label>  -->
+    </div> 
+    
+    <ng-template #Male>
+        <input type="radio" value="Male" checked>
+    <label for="Male">Male</label>
+    </ng-template>
+</label>
+
+<div>
+    Mode Of Payment:
+    <input type="checkbox" [(ngModel)]="IsCashPayment" name="IsCashPayment" id="IsCashPayment" />
+    <label for="IsCashPayment">
+         By Cash
+    </label>
+    <input type="checkbox" [(ngModel)]="IsChequePayment" name="IsChequePayment" id="IsChequePayment" />
+    <label for="IsChequePayment">
+         By Cheque
+    </label>
+</div>
+
+<!-- <div *ngIf="Gender=='Female'; else Male">
+    <input type="radio" value="Female" checked>
+    <label for="Female">Female</label>
+</div> -->
+
+<!-- <ng-template #Male>
+    <input type="radio" value="Male" checked>
+<label for="Male">Male</label>
+</ng-template> -->
+
+</div>
+
+<!-- <div *ngIf="IsLoggedIn || !IsNewUser">
+    <h1>Welcome</h1>
+</div>
+
+<div *ngIf="!IsLoggedIn">
+   <a href="">Please login your ID </a>
+</div>
+
+
+<div *ngIf="IsNewUser">
+    <a href="">Create/Sign In your acoount here</a> 
+</div> -->
+
+
+
