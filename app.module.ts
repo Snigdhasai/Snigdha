@@ -18,6 +18,6 @@ import { StudentComponent } from './student/student.component';
 
   ],
   providers: [],
-  bootstrap: [StudentComponent]
+  bootstrap: [EmpComponent]
 })
 export class AppModule { }

@@ -7,10 +7,21 @@ import { Employee } from 'src/Models/EmployeeModel';
 })
 export class EmpComponent implements OnInit 
 {
-  IsLoggedIn:boolean=true;
+   i:number=0;
+  IsLoggedIn:boolean=false;
   IsNewUser:boolean=true;
   IsCashPayment:boolean=true;
   IsChequePayment:boolean=false;
+
+  /*IsCashPayment:boolean=false;
+  IsChequePayment:boolean=true;*/
+
+  /*IsCashPayment:boolean=true;
+  IsChequePayment:boolean=true;*/
+
+  /*IsCashPayment:boolean=false;
+  IsChequePayment:boolean=false;*/
+
   Gender:string="";
   emp1:Employee=new Employee(3,"Ayushi",103,"Female");
 
@@ -22,5 +33,17 @@ export class EmpComponent implements OnInit
     //let emp1:Employee=new Employee(1,"Siri",100,"Female");
     this.Gender=this.emp1.gender;
   }
+
+  IsVisible:boolean=false;
+  ToggleShow()
+  {
+    this.IsVisible=!this.IsVisible;
+  }
+
+  CheckNumber($event:any)
+  {
+
+  }
+
 
 }
